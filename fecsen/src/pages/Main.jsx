@@ -12,11 +12,9 @@ function Main() {
                     <img src="" alt="배너2" className="banner__slide" />
                     <img src="" alt="배너3" className="banner__slide" />
                 </div>
-                <ul className="banner__list">
-                    <li className="banner__list-bar"></li>
-                    <li className="banner__list-bar"></li>
-                    <li className="banner__list-bar"></li>
-                </ul>
+                <div className="banner__list">
+                    <span className="banner__list-bar"></span>
+                </div>
                 <button id="prev">
                     <GrPrevious />
                 </button>
