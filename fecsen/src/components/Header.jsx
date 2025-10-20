@@ -29,7 +29,7 @@ function Header() {
             </nav>
             <button id="language-btn">
                 <MdLanguage />
-                EN
+                KO
             </button>
         </header>
     );
