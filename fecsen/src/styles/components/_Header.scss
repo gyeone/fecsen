@@ -1,0 +1,46 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    background-color: #fff;
+
+    #header__logo-img {
+        width: 140px;
+        height: 24px;
+    }
+
+    #gnb {
+        display: flex;
+        gap: 100px;
+    }
+
+    .gnb__menu:hover .gnb__link {
+        color: #f19d38;
+    }
+
+    #language-change {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #language-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #language-btn {
+        border: none;
+        padding: 0;
+        background: none;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+}

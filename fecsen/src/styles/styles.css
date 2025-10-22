@@ -1,4 +1,9 @@
 @charset "UTF-8";
+body {
+  color: #3e3a39;
+  transition: color 0.2s ease;
+}
+
 /* 스크린 리더에서만 읽히고 화면에 보이지 않도록 */
 .sr-only {
   position: absolute;
@@ -145,4 +150,61 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  background-color: #fff;
+}
+.header #header__logo-img {
+  width: 140px;
+  height: 24px;
+}
+.header #gnb {
+  display: flex;
+  gap: 100px;
+}
+.header .gnb__menu:hover .gnb__link {
+  color: #f19d38;
+}
+.header #language-change {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.header #language-img {
+  width: 30px;
+  height: 30px;
+}
+.header #language-btn {
+  border: none;
+  padding: 0;
+  background: none;
+  padding-left: 10px;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

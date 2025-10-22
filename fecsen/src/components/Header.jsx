@@ -25,22 +25,30 @@ function Header() {
             <nav>
                 <h2 className="sr-only">메인 메뉴</h2>
                 <ul id="gnb">
-                    <li>
-                        <a href="">{t(`gnb.company-introduction`)}</a>
+                    <li className="gnb__menu">
+                        <a className="gnb__link" href="">
+                            {t(`gnb.company-introduction`)}
+                        </a>
                     </li>
-                    <li>
-                        <a href="">{t(`gnb.network-security`)}</a>
+                    <li className="gnb__menu">
+                        <a className="gnb__link" href="">
+                            {t(`gnb.network-security`)}
+                        </a>
                     </li>
-                    <li>
-                        <a href="">{t(`gnb.cloud`)}</a>
+                    <li className="gnb__menu">
+                        <a className="gnb__link" href="">
+                            {t(`gnb.cloud`)}
+                        </a>
                     </li>
-                    <li>
-                        <a href="">{t(`gnb.security-solutions`)}</a>
+                    <li className="gnb__menu">
+                        <a className="gnb__link" href="">
+                            {t(`gnb.security-solutions`)}
+                        </a>
                     </li>
                 </ul>
             </nav>
-            <label htmlFor="language-btn">
-                <MdLanguage />
+            <label id="language-change" htmlFor="language-btn">
+                <MdLanguage id="language-img" />
                 <input
                     type="button"
                     id="language-btn"
