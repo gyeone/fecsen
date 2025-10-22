@@ -24,7 +24,7 @@ function Footer() {
                 <ul className="footer__contact">
                     <li>
                         <MdEmail />
-                        contact@cybersecure.com
+                        contact@fecsen.com
                     </li>
                     <li>
                         <IoCall />
@@ -33,9 +33,7 @@ function Footer() {
                 </ul>
             </div>
             <div className="footer__copyright">
-                Copyright ©{" "}
-                <span className="footer__copyright--year">2025</span> Fecsen,
-                All Rights Reserved.
+                Copyright © 2025 Fecsen, All Rights Reserved.
             </div>
         </footer>
     );
