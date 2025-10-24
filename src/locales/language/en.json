@@ -5,5 +5,20 @@
         "cloud": "Cloud",
         "security-solutions": "Security Solutions"
     },
-    "lnb": {}
+    "lnb": {
+        "company-introduction": {
+            "roadmap": "roadmap"
+        },
+        "network-security": {
+            "AI-based-network-monitoring-system": "AI based network monitoring system",
+            "deploy-a-firewall": "deploy a firewall",
+            "DDoS-protection": "DDoS protection",
+            "Intrusion-response": "Intrusion response",
+            "Endpoint-Detection-and-Response": "Endpoint Detection and Response"
+        },
+        "security-solutions": {
+            "Security-Operations-Center": "Security Operations Center",
+            "IT-Consulting": "IT Consulting"
+        }
+    }
 }
