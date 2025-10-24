@@ -8,34 +8,42 @@ function Footer() {
 
     return (
         <footer className="footer">
-            <img className="footer__logo" src={blackLogo} alt="펙센" />
-            <div>
+            <img id="footer__logo" src={blackLogo} alt="펙센" />
+            <div className="footer__contents">
                 <ul id="fnb">
-                    <li>
-                        <a href="">{t(`gnb.company-introduction`)}</a>
+                    <li className="fnb__menu">
+                        <a className="fnb__link" href="">
+                            {t(`gnb.company-introduction`)}
+                        </a>
                     </li>
-                    <li>
-                        <a href="">{t(`gnb.network-security`)}</a>
+                    <li className="fnb__menu">
+                        <a className="fnb__link" href="">
+                            {t(`gnb.network-security`)}
+                        </a>
                     </li>
-                    <li>
-                        <a href="">{t(`gnb.cloud`)}</a>
+                    <li className="fnb__menu">
+                        <a className="fnb__link" href="">
+                            {t(`gnb.cloud`)}
+                        </a>
                     </li>
-                    <li>
-                        <a href="">{t(`gnb.security-solutions`)}</a>
+                    <li className="fnb__menu">
+                        <a className="fnb__link" href="">
+                            {t(`gnb.security-solutions`)}
+                        </a>
                     </li>
                 </ul>
-                <ul className="footer__contact">
-                    <li>
-                        <MdEmail />
+                <ul id="footer__contact">
+                    <li className="contact">
+                        <MdEmail id="contact-img" />
                         contact@fecsen.com
                     </li>
-                    <li>
-                        <IoCall />
+                    <li className="contact">
+                        <IoCall id="contact-img" />
                         02-0000-0000
                     </li>
                 </ul>
             </div>
-            <div className="footer__copyright">
+            <div id="footer__copyright">
                 Copyright © 2025 Fecsen, All Rights Reserved.
             </div>
         </footer>

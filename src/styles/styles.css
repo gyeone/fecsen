@@ -207,4 +207,49 @@ a {
   background: none;
   padding-left: 10px;
   cursor: pointer;
+}
+
+.footer {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 80px 50px 100px;
+  border-top: 1px solid #808080;
+}
+.footer #footer__logo {
+  width: 200px;
+  height: 34px;
+}
+.footer .footer__contents {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 0 190px 0 100px;
+}
+.footer #fnb {
+  display: flex;
+  gap: 40px;
+}
+.footer .fnb__menu:not(:last-child) ::after {
+  content: "|";
+  color: #808080;
+  position: relative;
+  left: 20px;
+}
+.footer #footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer .contact {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.footer #contact-img {
+  width: 30px;
+  height: 30px;
+}
+.footer #footer__copyright {
+  align-self: end;
 }/*# sourceMappingURL=styles.css.map */
