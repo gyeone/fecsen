@@ -7,6 +7,7 @@
     },
     "lnb": {
         "company-introduction": {
+            "company-introduction-lnb": "회사 소개",
             "roadmap": "로드맵"
         },
         "network-security": {
@@ -15,6 +16,9 @@
             "DDoS-protection": "DDoS 대응",
             "Intrusion-response": "침입 대응",
             "Endpoint-Detection-and-Response": "엔드포인트 대응"
+        },
+        "cloud": {
+            "cloud-lnb": "클라우드"
         },
         "security-solutions": {
             "Security-Operations-Center": "보안 관제",

@@ -7,6 +7,7 @@
     },
     "lnb": {
         "company-introduction": {
+            "company-introduction-lnb": "About Fecsen",
             "roadmap": "roadmap"
         },
         "network-security": {
@@ -15,6 +16,9 @@
             "DDoS-protection": "DDoS protection",
             "Intrusion-response": "Intrusion response",
             "Endpoint-Detection-and-Response": "Endpoint Detection and Response"
+        },
+        "cloud": {
+            "cloud-lnb": "Cloud"
         },
         "security-solutions": {
             "Security-Operations-Center": "Security Operations Center",
