@@ -24,10 +24,7 @@ function Header() {
 
     return (
         <>
-            <header
-                className="header"
-                onMouseLeave={() => setActiveSitemap(false)}
-            >
+            <header className="header">
                 <h1>
                     <a href="/">
                         <img id="header__logo-img" src={blackLogo} alt="펙센" />
@@ -35,7 +32,7 @@ function Header() {
                 </h1>
                 <nav>
                     <h2 className="sr-only">메인 메뉴</h2>
-                    <ul id="gnb">
+                    <ul id="gnb" onMouseLeave={() => setActiveSitemap(false)}>
                         <li
                             className="gnb__menu"
                             onMouseEnter={() => {
