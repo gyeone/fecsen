@@ -3,13 +3,11 @@ import { useTranslation } from "react-i18next";
 function Sitemap({ activeMenu, activeSitemap, setActiveSitemap }) {
     const { t } = useTranslation();
 
-    if (!activeSitemap) return null;
-
     const lnbItems = t(`lnb.${activeMenu}`, { returnObjects: true });
 
     return (
         <section
-            className={`sitemap ${activeMenu ? "sitemap--visible" : ""}`}
+            className={`sitemap ${activeSitemap ? "sitemap--visible" : ""}`}
             onMouseEnter={() => setActiveSitemap(true)}
             onMouseLeave={() => setActiveSitemap(false)}
         >
