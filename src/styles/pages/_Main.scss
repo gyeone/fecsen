@@ -1,0 +1,68 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.banner {
+    overflow: hidden;
+    position: relative;
+
+    &__slides {
+        display: flex;
+        width: 300vw;
+        height: 100vh;
+        transition: 1s;
+
+        &--0 {
+            transform: translateX(0);
+        }
+
+        &--1 {
+            transform: translateX(-100vw);
+        }
+
+        &--2 {
+            transform: translateX(-200vw);
+        }
+    }
+
+    &__slide {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    &__control {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        position: absolute;
+        align-items: center;
+        width: 100vw;
+        bottom: 100px;
+    }
+
+    &__progress {
+        width: 46rem;
+        height: 1px;
+        background-color: #fff;
+        border-radius: 100%;
+    }
+
+    #prev {
+        color: #fff;
+    }
+
+    #next {
+        color: #fff;
+    }
+
+    #pause {
+        color: #fff;
+    }
+
+    .banner__control-icon {
+        width: 34px;
+        height: 34px;
+    }
+}
