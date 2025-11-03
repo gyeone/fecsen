@@ -1,9 +1,9 @@
 .footer {
-    margin-top: 200px;
     display: flex;
     justify-content: space-between;
-    padding: 80px 80px 50px 100px;
-    border-top: 1px solid #808080;
+    align-items: center;
+    padding: 60px 120px;
+    border-top: 1px solid #c3c1c1;
 
     #footer__logo {
         width: 200px;
@@ -14,7 +14,6 @@
         display: flex;
         flex-direction: column;
         gap: 50px;
-        margin: 0 190px 0 100px;
     }
 
     #fnb {
@@ -24,7 +23,7 @@
 
     .fnb__menu:not(:last-child) ::after {
         content: "|";
-        color: #808080;
+        color: #c3c1c1;
         position: relative;
         left: 20px;
     }
