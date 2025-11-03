@@ -22,6 +22,16 @@ function Main() {
         return () => clearInterval(interval);
     }, [isPlaying]);
 
+    // 이전 배너 버튼 클릭 시
+    const handlePrev = () => {
+        setCurrentBanner((prev) => (prev - 1 + 3) % 3);
+    };
+
+    // 다음 배너 버튼 클릭 시
+    const handleNext = () => {
+        setCurrentBanner((prev) => (prev + 1) % 3);
+    };
+
     return (
         <main className="main">
             <section className="banner">
@@ -44,19 +54,24 @@ function Main() {
                         className="banner__slide"
                     />
                 </div>
-                <div className="banner__list">
-                    <span className="banner__list-bar"></span>
+                <div className="banner__control">
+                    <div className="banner__progress">
+                        <span className="banner__progress-bar"></span>
+                    </div>
+                    <button id="prev" onClick={handlePrev}>
+                        <IoIosArrowBack className="banner__control-icon" />
+                    </button>
+                    <button id="next" onClick={handleNext}>
+                        <IoIosArrowForward className="banner__control-icon" />
+                    </button>
+                    <button id="pause" onClick={() => setIsPlaying(!isPlaying)}>
+                        {isPlaying ? (
+                            <IoPauseOutline className="banner__control-icon" />
+                        ) : (
+                            <IoPlaySharp className="banner__control-icon" />
+                        )}
+                    </button>
                 </div>
-                <button id="prev">
-                    <GrPrevious />
-                </button>
-                <button id="next">
-                    <GrNext />
-                </button>
-                <button className="">
-                    <AiOutlinePause />
-                    <IoPlaySharp />
-                </button>
             </section>
         </main>
     );
