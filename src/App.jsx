@@ -5,7 +5,7 @@ import Footer from "./components/Footer.jsx";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/fecsen">
             <Header />
             <Routes>
                 <Route path="/" element={<Main />} />
