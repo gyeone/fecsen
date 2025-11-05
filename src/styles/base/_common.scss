@@ -1,6 +1,7 @@
 body {
     color: #3e3a39;
     transition: color 0.2s ease;
+    overflow-x: hidden;
 }
 
 /* 스크린 리더에서만 읽히고 화면에 보이지 않도록 */
