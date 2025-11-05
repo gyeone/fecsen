@@ -56,7 +56,9 @@ function Main() {
                 </div>
                 <div className="banner__control">
                     <div className="banner__progress">
-                        <span className="banner__progress-bar"></span>
+                        <span
+                            className={`banner__progress-bar banner__progress-bar--${currentBanner}`}
+                        ></span>
                     </div>
                     <button id="prev" onClick={handlePrev}>
                         <IoIosArrowBack className="banner__control-icon" />
