@@ -6,7 +6,7 @@
     border-top: 1px solid #c3c1c1;
 
     #footer__logo {
-        width: 183px;
+        width: 180px;
         object-fit: cover;
     }
 
@@ -19,6 +19,7 @@
     #fnb {
         display: flex;
         gap: 40px;
+        padding-top: 8px;
     }
 
     .fnb__menu:not(:last-child) ::after {
