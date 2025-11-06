@@ -4,21 +4,29 @@
     left: 0;
     width: 100%;
     height: 90px;
-    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
     padding: 0 100px;
     background-color: #fff;
+    font-size: 17px;
 
     #header__logo-img {
         width: 140px;
-        height: 24px;
+        object-fit: cover;
     }
 
     #gnb {
         display: flex;
-        gap: 100px;
+        gap: 50px;
+    }
+
+    .gnb__menu {
+        display: flex;
+        align-items: center;
+        height: 90px;
+        padding: 25px;
     }
 
     .gnb__menu:hover .gnb__link {
@@ -37,10 +45,12 @@
     }
 
     #language-btn {
+        font-family: "Pretendard-Regular", sans-serif;
         border: none;
         padding: 0;
         background: none;
         padding-left: 10px;
         cursor: pointer;
+        font-size: 16px;
     }
 }

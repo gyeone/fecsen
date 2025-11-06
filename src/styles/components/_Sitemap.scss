@@ -9,6 +9,7 @@
     overflow: hidden;
     opacity: 0;
     gap: 200px;
+    z-index: 100;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px,
         rgba(0, 0, 0, 0.06) 0px 2px 2px -1px;
@@ -21,6 +22,11 @@
         padding: 50px 100px;
     }
 
+    #sitemap__menu {
+        font-size: 22px;
+        position: relative;
+    }
+
     #sitemap__menu::after {
         content: "";
         display: block;
@@ -28,8 +34,8 @@
         height: 250px;
         position: absolute;
         background-color: #c3c1c1;
-        top: 25px;
-        left: 270px;
+        top: -25px;
+        right: -90px;
     }
 
     #lnb {
@@ -37,5 +43,6 @@
         flex-direction: column;
         justify-content: left;
         gap: 30px;
+        font-size: 17px;
     }
 }
