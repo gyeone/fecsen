@@ -1,9 +1,10 @@
 import blackLogo from "../assets/icons/blackLogo.png";
 import whiteLogo from "../assets/icons/whiteLogo.png";
 import { MdLanguage } from "react-icons/md";
+import { PiCloudFogDuotone } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
 import i18n from "../locales/i18n";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Sitemap from "./Sitemap";
 
 function Header() {
@@ -25,12 +26,12 @@ function Header() {
     return (
         <>
             <header className="header">
-                <h1>
-                    <a href="/">
-                        <img id="header__logo-img" src={blackLogo} alt="펙센" />
+                <h1 id="header__logo">
+                    <a id="header__logo-link" href="/">
+                        <img id="header__logo-img" src={whiteLogo} alt="펙센" />
                     </a>
                 </h1>
-                <nav>
+                <nav className="header__menu">
                     <h2 className="sr-only">메인 메뉴</h2>
                     <ul id="gnb" onMouseLeave={() => setActiveSitemap(false)}>
                         <li
@@ -80,7 +81,7 @@ function Header() {
                     </ul>
                 </nav>
                 <label id="language-change" htmlFor="language-btn">
-                    <MdLanguage id="language-img" />
+                    <MdLanguage id="language-icon" />
                     <input
                         type="button"
                         id="language-btn"
@@ -88,6 +89,10 @@ function Header() {
                         onClick={changeLanguage}
                     />
                 </label>
+                <button>
+                    <sapn className="sr-only">메인 메뉴 열기</sapn>
+                    <PiCloudFogDuotone id="hamburger-icon" />
+                </button>
             </header>
             <Sitemap
                 activeMenu={activeMenu}

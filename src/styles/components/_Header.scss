@@ -2,15 +2,18 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     padding: 0 100px;
-    background-color: #fff;
     font-size: 20px;
+    // background-color: #fff;
+    color: #fff;
+    // border-bottom: 1px solid #c3c1c1;
+    border-bottom: 1px solid #fff;
 
     #header__logo-img {
         width: 160px;
@@ -39,7 +42,7 @@
         cursor: pointer;
     }
 
-    #language-img {
+    #language-icon {
         width: 30px;
         height: 30px;
     }
@@ -51,6 +54,51 @@
         background: none;
         padding-left: 10px;
         cursor: pointer;
+        color: #fff;
         font-size: 16px;
     }
+
+    #hamburger-icon {
+        width: 30px;
+        height: 30px;
+        display: none;
+    }
 }
+
+// 태블릿, 모바일
+@media screen and (max-width: 1300px) {
+    .header {
+        .header__menu {
+            display: none;
+        }
+
+        #language-change {
+            display: none;
+        }
+
+        #hamburger-icon {
+            width: 35px;
+            height: 35px;
+            display: block;
+            color: #fff;
+        }
+    }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+    .header {
+        padding: 0 35px;
+        height: 75px;
+
+        #header__logo-img {
+            width: 140px;
+        }
+
+        #hamburger-icon {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
