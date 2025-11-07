@@ -35,10 +35,11 @@
     &__control {
         display: flex;
         justify-content: center;
-        gap: 32px;
-        position: absolute;
         align-items: center;
+        gap: 32px;
         width: 100vw;
+        padding: 0 60px;
+        position: absolute;
         bottom: 100px;
     }
 
@@ -87,5 +88,35 @@
     .banner__control-icon {
         width: 34px;
         height: 34px;
+    }
+}
+
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .banner {
+        &__control {
+            bottom: 80px;
+        }
+    }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+    .banner {
+        &__control {
+            bottom: 50px;
+            padding: 0 40px;
+            gap: 30px;
+        }
+
+        #prev,
+        #next {
+            display: none;
+        }
+
+        .banner__control-icon {
+            width: 30px;
+            height: 30px;
+        }
     }
 }
