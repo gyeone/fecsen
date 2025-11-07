@@ -34,11 +34,11 @@ function Footer() {
                 </ul>
                 <ul id="footer__contact">
                     <li className="contact">
-                        <MdEmail id="contact-img" />
+                        <MdEmail id="contact-icon" />
                         contact@fecsen.com
                     </li>
                     <li className="contact">
-                        <IoCall id="contact-img" />
+                        <IoCall id="contact-icon" />
                         02-0000-0000
                     </li>
                 </ul>

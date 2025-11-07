@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
     padding: 60px 120px;
     border-top: 1px solid #c3c1c1;
 
@@ -41,12 +42,68 @@
         align-items: center;
     }
 
-    #contact-img {
+    #contact-icon {
         width: 28px;
         height: 28px;
     }
 
     #footer__copyright {
         align-self: end;
+    }
+}
+
+// 태블릿과 모바일
+@media screen and (max-width: 1300px) {
+    .footer {
+        font-size: 14px;
+        flex-direction: column;
+        align-items: start;
+        padding: 50px 50px;
+        gap: 50px;
+
+        .footer__contents {
+            gap: 50px;
+        }
+
+        #fnb {
+            flex-direction: column;
+            gap: 25px;
+            padding-top: 0;
+        }
+
+        .fnb__menu:not(:last-child) ::after {
+            content: "";
+        }
+
+        #footer__contact {
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        #contact-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        #footer__copyright {
+            align-self: start;
+            font-size: 12px;
+        }
+    }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+    .footer {
+        padding: 40px 40px;
+        gap: 40px;
+
+        #footer__logo {
+            width: 160px;
+        }
+
+        .footer__contents {
+            gap: 40px;
+        }
     }
 }
