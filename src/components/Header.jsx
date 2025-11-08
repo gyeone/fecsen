@@ -25,10 +25,14 @@ function Header() {
 
     return (
         <>
-            <header className="header">
+            <header className={`header ${activeSitemap ? "header-white" : ""}`}>
                 <h1 id="header__logo">
                     <a id="header__logo-link" href="/">
-                        <img id="header__logo-img" src={whiteLogo} alt="펙센" />
+                        <img
+                            id="header__logo-img"
+                            src={activeSitemap ? blackLogo : whiteLogo}
+                            alt="펙센"
+                        />
                     </a>
                 </h1>
                 <nav className="header__menu">
@@ -93,6 +97,17 @@ function Header() {
                     <sapn className="sr-only">메인 메뉴 열기</sapn>
                     <PiCloudFogDuotone id="hamburger-icon" />
                 </button>
+                        <input
+                            type="button"
+                            id="header__lang-btn"
+                            className={` ${
+                                activeSitemap
+                                    ? "header__lang-btn--black"
+                                    : "header__lang-btn--white"
+                            }`}
+                            value={currentLanguage}
+                            onClick={changeLanguage}
+                        />
             </header>
             <Sitemap
                 activeMenu={activeMenu}

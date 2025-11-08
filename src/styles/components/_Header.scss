@@ -10,10 +10,9 @@
     z-index: 100;
     padding: 0 100px;
     font-size: 20px;
-    // background-color: #fff;
     color: #fff;
-    // border-bottom: 1px solid #c3c1c1;
     border-bottom: 1px solid #fff;
+    transition: all 0.5s ease-in-out;
 
     #header__logo-img {
         width: 160px;
@@ -42,27 +41,39 @@
         cursor: pointer;
     }
 
-    #language-icon {
+    #header__lang-icon {
         width: 30px;
         height: 30px;
     }
 
-    #language-btn {
-        font-family: "Pretendard-Regular", sans-serif;
+    #header__lang-btn {
+        font-family: "Pretendard-Bold", sans-serif;
         border: none;
         padding: 0;
         background: none;
         padding-left: 10px;
         cursor: pointer;
-        color: #fff;
         font-size: 16px;
+        transition: all 0.5s ease-in-out;
     }
 
     #hamburger-icon {
-        width: 30px;
-        height: 30px;
         display: none;
     }
+}
+
+.header__lang-btn--black {
+    color: #3e3a39;
+}
+
+.header__lang-btn--white {
+    color: white;
+}
+
+.header-white {
+    background-color: #fff;
+    border-bottom: 1px solid #c3c1c1;
+    color: #3e3a39;
 }
 
 // 태블릿, 모바일
