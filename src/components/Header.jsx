@@ -1,7 +1,9 @@
 import blackLogo from "../assets/icons/blackLogo.png";
 import whiteLogo from "../assets/icons/whiteLogo.png";
 import { MdLanguage } from "react-icons/md";
-import { PiCloudFogDuotone } from "react-icons/pi";
+// import { PiCloudFogDuotone } from "react-icons/pi";
+import { PiCloudSnowBold } from "react-icons/pi";
+import { PiCloudXBold } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
 import i18n from "../locales/i18n";
 import { useState } from "react";
@@ -15,12 +17,18 @@ function Header() {
     const [activeMenu, setActiveMenu] = useState(null);
     // 사이트맵 여부
     const [activeSitemap, setActiveSitemap] = useState(false);
+    // 사이드바 여부
+    const [toggleSidebar, setToggleSidebar] = useState(false);
 
     // 언어 변경 함수
     const changeLanguage = () => {
         const newLang = currentLanguage === "KO" ? "en" : "ko";
         setCurrentLanguage(newLang.toUpperCase());
         i18n.changeLanguage(newLang);
+    };
+
+    const handleSidebar = () => {
+        toggleSidebar ? setToggleSidebar(false) : setToggleSidebar(true);
     };
 
     return (
@@ -84,19 +92,18 @@ function Header() {
                         </li>
                     </ul>
                 </nav>
-                <label id="language-change" htmlFor="language-btn">
-                    <MdLanguage id="language-icon" />
-                    <input
-                        type="button"
-                        id="language-btn"
-                        value={currentLanguage}
-                        onClick={changeLanguage}
-                    />
-                </label>
-                <button>
-                    <sapn className="sr-only">메인 메뉴 열기</sapn>
-                    <PiCloudFogDuotone id="hamburger-icon" />
-                </button>
+                <div
+                    className={`header__lang ${
+                        toggleSidebar ? "header__mobile" : ""
+                    }`}
+                >
+                    <label
+                        className={`header__lang-change ${
+                            toggleSidebar ? "" : "header__lang-change--visible"
+                        }`}
+                        htmlFor="header__lang-btn"
+                    >
+                        <MdLanguage id="header__lang-icon" />
                         <input
                             type="button"
                             id="header__lang-btn"
@@ -108,6 +115,20 @@ function Header() {
                             value={currentLanguage}
                             onClick={changeLanguage}
                         />
+                    </label>
+                    <button
+                        className="header__hamburg
+                er"
+                        onClick={handleSidebar}
+                    >
+                        <sapn className="sr-only">메인 메뉴 열기</sapn>
+                        {toggleSidebar ? (
+                            <PiCloudXBold id="hamburger-icon" />
+                        ) : (
+                            <PiCloudSnowBold id="hamburger-icon" />
+                        )}
+                    </button>
+                </div>
             </header>
             <Sitemap
                 activeMenu={activeMenu}

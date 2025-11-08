@@ -35,7 +35,12 @@
         color: #f19d38;
     }
 
-    #language-change {
+    .header__lang {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__lang-change {
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -83,8 +88,18 @@
             display: none;
         }
 
-        #language-change {
+        .header__mobile {
+            display: flex;
+            gap: 25px;
+        }
+
+        .header__lang-change--visible {
             display: none;
+        }
+
+        #header__lang-btn {
+            padding-left: 8px;
+            font-size: 14px;
         }
 
         #hamburger-icon {
@@ -99,16 +114,25 @@
 // 모바일
 @media screen and (max-width: 767px) {
     .header {
-        padding: 0 35px;
+        padding: 0 30px;
         height: 75px;
 
         #header__logo-img {
-            width: 140px;
+            width: 120px;
+        }
+
+        #header__lang-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        #header__lang-btn {
+            padding-left: 6px;
         }
 
         #hamburger-icon {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
         }
     }
 }
