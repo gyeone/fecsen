@@ -14,9 +14,16 @@
     border-bottom: 1px solid #fff;
     transition: all 0.5s ease-in-out;
 
-    #header__logo-img {
+    .header__logo {
         width: 160px;
-        object-fit: cover;
+        height: 22px;
+    }
+
+    .header__logo-link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
     }
 
     #gnb {
@@ -33,11 +40,6 @@
 
     .gnb__menu:hover .gnb__link {
         color: #f19d38;
-    }
-
-    .header__lang {
-        display: flex;
-        align-items: center;
     }
 
     .header__lang-change {
@@ -62,11 +64,12 @@
         transition: all 0.5s ease-in-out;
     }
 
-    #hamburger-icon {
+    .header__hamburger {
         display: none;
     }
 }
 
+// 색 전환
 .header__lang-btn--black {
     color: #3e3a39;
 }
@@ -75,10 +78,18 @@
     color: white;
 }
 
-.header-white {
+.header__white {
     background-color: #fff;
     border-bottom: 1px solid #c3c1c1;
     color: #3e3a39;
+}
+
+.header__logo--black {
+    background-image: url("src/assets/icons/blackLogo.png");
+}
+
+.header__logo--white {
+    background-image: url("src/assets/icons/whiteLogo.png");
 }
 
 // 태블릿, 모바일
@@ -88,12 +99,7 @@
             display: none;
         }
 
-        .header__mobile {
-            display: flex;
-            gap: 25px;
-        }
-
-        .header__lang-change--visible {
+        .header__lang-change {
             display: none;
         }
 
@@ -102,10 +108,14 @@
             font-size: 14px;
         }
 
+        .header__hamburger {
+            display: block;
+        }
+
         #hamburger-icon {
+            display: block;
             width: 35px;
             height: 35px;
-            display: block;
             color: #fff;
         }
     }
@@ -117,13 +127,14 @@
         padding: 0 30px;
         height: 75px;
 
-        #header__logo-img {
+        .header__logo {
             width: 120px;
+            height: 16px;
         }
 
         #header__lang-icon {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
         }
 
         #header__lang-btn {

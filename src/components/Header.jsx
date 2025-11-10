@@ -1,9 +1,7 @@
 import blackLogo from "../assets/icons/blackLogo.png";
 import whiteLogo from "../assets/icons/whiteLogo.png";
 import { MdLanguage } from "react-icons/md";
-// import { PiCloudFogDuotone } from "react-icons/pi";
-import { PiCloudSnowBold } from "react-icons/pi";
-import { PiCloudXBold } from "react-icons/pi";
+import { LuMenu } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import i18n from "../locales/i18n";
 import { useState } from "react";
@@ -33,15 +31,18 @@ function Header() {
 
     return (
         <>
-            <header className={`header ${activeSitemap ? "header-white" : ""}`}>
-                <h1 id="header__logo">
-                    <a id="header__logo-link" href="/">
-                        <img
-                            id="header__logo-img"
-                            src={activeSitemap ? blackLogo : whiteLogo}
-                            alt="펙센"
-                        />
-                    </a>
+            <header
+                className={`header ${activeSitemap ? "header__white" : ""}`}
+            >
+                <h1 className="header__logo">
+                    <a
+                        className={`header__logo-link ${
+                            activeSitemap
+                                ? "header__logo--black"
+                                : "header__logo--white"
+                        }`}
+                        href="/"
+                    ></a>
                 </h1>
                 <nav className="header__menu">
                     <h2 className="sr-only">메인 메뉴</h2>
@@ -92,43 +93,27 @@ function Header() {
                         </li>
                     </ul>
                 </nav>
-                <div
-                    className={`header__lang ${
-                        toggleSidebar ? "header__mobile" : ""
-                    }`}
+                <label
+                    className="header__lang-change"
+                    htmlFor="header__lang-btn"
                 >
-                    <label
-                        className={`header__lang-change ${
-                            toggleSidebar ? "" : "header__lang-change--visible"
+                    <MdLanguage id="header__lang-icon" />
+                    <input
+                        type="button"
+                        id="header__lang-btn"
+                        className={` ${
+                            activeSitemap
+                                ? "header__lang-btn--black"
+                                : "header__lang-btn--white"
                         }`}
-                        htmlFor="header__lang-btn"
-                    >
-                        <MdLanguage id="header__lang-icon" />
-                        <input
-                            type="button"
-                            id="header__lang-btn"
-                            className={` ${
-                                activeSitemap
-                                    ? "header__lang-btn--black"
-                                    : "header__lang-btn--white"
-                            }`}
-                            value={currentLanguage}
-                            onClick={changeLanguage}
-                        />
-                    </label>
-                    <button
-                        className="header__hamburg
-                er"
-                        onClick={handleSidebar}
-                    >
-                        <sapn className="sr-only">메인 메뉴 열기</sapn>
-                        {toggleSidebar ? (
-                            <PiCloudXBold id="hamburger-icon" />
-                        ) : (
-                            <PiCloudSnowBold id="hamburger-icon" />
-                        )}
-                    </button>
-                </div>
+                        value={currentLanguage}
+                        onClick={changeLanguage}
+                    />
+                </label>
+                <button className="header__hamburger" onClick={handleSidebar}>
+                    <span className="sr-only">메인 메뉴 열기</span>
+                    <LuMenu id="hamburger-icon" />
+                </button>
             </header>
             <Sitemap
                 activeMenu={activeMenu}
