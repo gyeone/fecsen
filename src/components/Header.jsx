@@ -1,11 +1,10 @@
-import blackLogo from "../assets/icons/blackLogo.png";
-import whiteLogo from "../assets/icons/whiteLogo.png";
 import { MdLanguage } from "react-icons/md";
 import { LuMenu } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import i18n from "../locales/i18n";
 import { useState } from "react";
 import Sitemap from "./Sitemap";
+import Sidebar from "./Sidebar";
 
 function Header() {
     const { t } = useTranslation();
@@ -111,7 +110,7 @@ function Header() {
                     />
                 </label>
                 <button className="header__hamburger" onClick={handleSidebar}>
-                    <span className="sr-only">메인 메뉴 열기</span>
+                    <span className="sr-only">사이드 바 열기</span>
                     <LuMenu id="hamburger-icon" />
                 </button>
             </header>
@@ -119,6 +118,12 @@ function Header() {
                 activeMenu={activeMenu}
                 activeSitemap={activeSitemap}
                 setActiveSitemap={setActiveSitemap}
+            />
+            <Sidebar
+                toggleSidebar={toggleSidebar}
+                setToggleSidebar={setToggleSidebar}
+                currentLanguage={currentLanguage}
+                changeLanguage={changeLanguage}
             />
         </>
     );
