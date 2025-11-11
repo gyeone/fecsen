@@ -21,12 +21,12 @@
         padding: 50px 100px;
     }
 
-    #sitemap__menu {
+    #sitemap__gnb {
         font-size: 22px;
         position: relative;
     }
 
-    #sitemap__menu::after {
+    #sitemap__gnb::after {
         content: "";
         display: block;
         width: 1px;

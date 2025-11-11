@@ -11,7 +11,7 @@ function Sitemap({ activeMenu, activeSitemap, setActiveSitemap }) {
             onMouseEnter={() => setActiveSitemap(true)}
             onMouseLeave={() => setActiveSitemap(false)}
         >
-            <h3 id="sitemap__menu">{t(`gnb.${activeMenu}`)}</h3>
+            <h3 id="sitemap__gnb">{t(`gnb.${activeMenu}`)}</h3>
             <ul id="lnb">
                 {lnbItems &&
                     Object.entries(lnbItems).map(([k, v]) => (
