@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { MdLanguage } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
+import { FiArrowUpRight } from "react-icons/fi";
 
 function Sidebar({
     toggleSidebar,
@@ -13,6 +14,9 @@ function Sidebar({
     const handleSidebar = () => {
         setToggleSidebar(false);
     };
+
+    const gnb = t("gnb", { returnObjects: true });
+    const lnb = t("lnb", { returnObjects: true });
 
     return (
         <>
@@ -32,68 +36,23 @@ function Sidebar({
                             onClick={changeLanguage}
                         />
                     </label>
-                    <button className="sidebar__closer" onClick={handleSidebar}>
+                    <button className="sidebar__close" onClick={handleSidebar}>
                         <span className="sr-only">사이드 바 닫기</span>
                         <IoClose id="sidebar__close-icon" />
                     </button>
                 </div>
                 <ul className="sidebar__contents">
-                    <li className="sidebar__content">
-                        <h3 className="sidebar__gnb">
-                            {t("gnb.company-introduction")}
-                        </h3>
-                        <a href="" className="sidebar__lnb">
-                            {t(
-                                "lnb.company-introduction.company-introduction-lnb"
-                            )}
-                        </a>
-                        <a href="" className="sidebar__lnb">
-                            {t("lnb.company-introduction.roadmap")}
-                        </a>
-                    </li>
-                    <li className="sidebar__content">
-                        <h3 className="sidebar__gnb">
-                            {t("gnb.network-security")}
-                        </h3>
-                        <a href="" className="sidebar__lnb">
-                            {t(
-                                "lnb.network-security.AI-based-network-monitoring-system"
-                            )}
-                        </a>
-                        <a href="" className="sidebar__lnb">
-                            {t("lnb.network-security.deploy-a-firewall")}
-                        </a>
-                        <a href="" className="sidebar__lnb">
-                            {t("lnb.network-security.DDoS-protection")}
-                        </a>
-                        <a href="" className="sidebar__lnb">
-                            {t("lnb.network-security.Intrusion-response")}
-                        </a>
-                        <a href="" className="sidebar__lnb">
-                            {t(
-                                "lnb.network-security.Endpoint-Detection-and-Response"
-                            )}
-                        </a>
-                    </li>
-                    <li className="sidebar__content">
-                        <h3 className="sidebar__gnb">{t("gnb.cloud")}</h3>
-                        <a href="" className="sidebar__lnb">
-                            {t("lnb.cloud.cloud-lnb")}
-                        </a>
-                    </li>
-                    <li className="sidebar__content">
-                        <h3 className="sidebar__gnb">
-                            {t("gnb.security-solutions")}
-                        </h3>
-                        <a href="" className="sidebar__lnb">
-                            {t(
-                                "lnb.security-solutions.Security-Operations-Center"
-                            )}
-                        </a>
-                        <a href="" className="sidebar__lnb">
-                            {t("lnb.security-solutions.IT-Consulting")}
-                        </a>
-                    </li>
+                    {Object.entries(gnb).map(([gnbK, gnbV]) => (
+                        <li className="sidebar__content" key={gnbK}>
+                            <h3 className="sidebar__gnb">{gnbV}</h3>
+                            {Object.entries(lnb[gnbK]).map(([lnbK, lnbV]) => (
+                                <a href="" className="sidebar__lnb" key={lnbK}>
+                                    {lnbV}
+                                    <FiArrowUpRight className="sidebar__lnb-icon" />
+                                </a>
+                            ))}
+                        </li>
+                    ))}
                 </ul>
             </section>
 

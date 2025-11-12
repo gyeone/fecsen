@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 function Sitemap({ activeMenu, activeSitemap, setActiveSitemap }) {
     const { t } = useTranslation();
 
-    const lnbItems = t(`lnb.${activeMenu}`, { returnObjects: true });
+    const lnb = t(`lnb.${activeMenu}`, { returnObjects: true });
 
     return (
         <section
@@ -12,9 +12,9 @@ function Sitemap({ activeMenu, activeSitemap, setActiveSitemap }) {
             onMouseLeave={() => setActiveSitemap(false)}
         >
             <h3 id="sitemap__gnb">{t(`gnb.${activeMenu}`)}</h3>
-            <ul id="lnb">
-                {lnbItems &&
-                    Object.entries(lnbItems).map(([k, v]) => (
+            <ul id="sitemap__lnb">
+                {lnb &&
+                    Object.entries(lnb).map(([k, v]) => (
                         <li key={k}>
                             <a href="">{v}</a>
                         </li>
