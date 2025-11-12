@@ -4,7 +4,7 @@ import { MdLanguage } from "react-icons/md";
 import { LuMenu } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import i18n from "../locales/i18n";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Sitemap from "./Sitemap";
 import Sidebar from "./Sidebar";
 
@@ -18,6 +18,8 @@ function Header() {
     const [activeSitemap, setActiveSitemap] = useState(false);
     // 사이드바 여부
     const [toggleSidebar, setToggleSidebar] = useState(false);
+    // 스크롤 여부
+    const [isScrolled, setIsScrolled] = useState(false);
 
     // 언어 변경 함수
     const changeLanguage = () => {
@@ -27,17 +29,36 @@ function Header() {
     };
 
     const handleSidebar = () => {
-        toggleSidebar ? setToggleSidebar(false) : setToggleSidebar(true);
+        setToggleSidebar((prev) => !prev);
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        // 컴포넌트가 처음 마운트 될 때 이벤트 리스너 등록
+        window.addEventListener("scroll", handleScroll);
+        // 언마운트 시 이벤트리스너 제거
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <>
             <header
-                className={`header ${activeSitemap ? "header__white" : ""}`}
+                className={`header ${
+                    activeSitemap || isScrolled ? "header__white" : ""
+                }`}
             >
                 <h1 className="header__logo">
                     <a className="header__logo-link " href="/">
-                        {activeSitemap ? (
+                        {activeSitemap || isScrolled ? (
                             <img
                                 className="header__logo-img"
                                 src={blackLogo}
@@ -110,7 +131,7 @@ function Header() {
                         type="button"
                         id="header__lang-btn"
                         className={` ${
-                            activeSitemap
+                            activeSitemap || isScrolled
                                 ? "header__lang-btn--black"
                                 : "header__lang-btn--white"
                         }`}
@@ -120,7 +141,11 @@ function Header() {
                 </label>
                 <button className="header__hamburger" onClick={handleSidebar}>
                     <span className="sr-only">사이드 바 열기</span>
-                    <LuMenu id="hamburger-icon" />
+                    <LuMenu
+                        className={`hamburger-icon ${
+                            isScrolled && "hamburger-icon__black"
+                        }`}
+                    />
                 </button>
             </header>
             <Sitemap

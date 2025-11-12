@@ -107,11 +107,16 @@
             display: block;
         }
 
-        #hamburger-icon {
+        .hamburger-icon {
             display: block;
             width: 35px;
             height: 35px;
             color: #fff;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .hamburger-icon__black {
+            color: #3e3a39;
         }
     }
 }
@@ -136,7 +141,7 @@
             padding-left: 6px;
         }
 
-        #hamburger-icon {
+        .hamburger-icon {
             width: 30px;
             height: 30px;
         }
