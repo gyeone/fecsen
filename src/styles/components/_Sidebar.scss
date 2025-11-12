@@ -51,7 +51,7 @@
         transition: all 0.5s ease-in-out;
     }
 
-    .sidebar__closer {
+    .sidebar__close {
         height: 90px;
         cursor: default;
     }
@@ -82,21 +82,16 @@
     }
 
     .sidebar__lnb {
-        font-size: 17px;
-        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 3px;
         width: fit-content;
-    }
+        font-size: 17px;
+        transition: color 0.1s ease-in-out;
 
-    .sidebar__lnb::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 3px;
-        right: -20px;
-        width: 10px;
-        height: 10px;
-        background-image: url("src/assets/images/arrow.png");
-        background-size: cover;
+        &:hover {
+            color: #f19d38;
+        }
     }
 }
 
@@ -148,13 +143,6 @@
 
         .sidebar__lnb {
             font-size: 15px;
-        }
-
-        .sidebar__lnb::after {
-            top: 4px;
-            right: -14px;
-            width: 8px;
-            height: 8px;
         }
     }
 }
