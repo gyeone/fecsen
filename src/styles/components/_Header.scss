@@ -19,11 +19,10 @@
         height: 22px;
     }
 
-    .header__logo-link {
-        display: inline-block;
+    .header__logo-img {
         width: 100%;
         height: 100%;
-        background-size: cover;
+        object-fit: cover;
     }
 
     #gnb {
@@ -36,6 +35,10 @@
         align-items: center;
         height: 90px;
         padding: 25px;
+    }
+
+    .gnb__link {
+        transition: color 0.1s ease-in-out;
     }
 
     .gnb__menu:hover .gnb__link {
@@ -82,14 +85,6 @@
     background-color: #fff;
     border-bottom: 1px solid #c3c1c1;
     color: #3e3a39;
-}
-
-.header__logo--black {
-    background-image: url("src/assets/icons/blackLogo.png");
-}
-
-.header__logo--white {
-    background-image: url("src/assets/icons/whiteLogo.png");
 }
 
 // 태블릿, 모바일

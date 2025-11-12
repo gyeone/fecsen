@@ -1,3 +1,5 @@
+import blackLogo from "../assets/icons/blackLogo.png";
+import whiteLogo from "../assets/icons/whiteLogo.png";
 import { MdLanguage } from "react-icons/md";
 import { LuMenu } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
@@ -34,14 +36,21 @@ function Header() {
                 className={`header ${activeSitemap ? "header__white" : ""}`}
             >
                 <h1 className="header__logo">
-                    <a
-                        className={`header__logo-link ${
-                            activeSitemap
-                                ? "header__logo--black"
-                                : "header__logo--white"
-                        }`}
-                        href="/"
-                    ></a>
+                    <a className="header__logo-link " href="/">
+                        {activeSitemap ? (
+                            <img
+                                className="header__logo-img"
+                                src={blackLogo}
+                                alt="fecsen"
+                            />
+                        ) : (
+                            <img
+                                className="header__logo-img"
+                                src={whiteLogo}
+                                alt="fecsen"
+                            />
+                        )}
+                    </a>
                 </h1>
                 <nav className="header__menu">
                     <h2 className="sr-only">메인 메뉴</h2>
