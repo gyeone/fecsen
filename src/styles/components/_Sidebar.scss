@@ -119,3 +119,42 @@
     visibility: visible;
 }
 
+@media screen and (max-width: 767px) {
+    .sidebar {
+        .sidebar__header {
+            height: 75px;
+            padding: 0 30px;
+            gap: 25px;
+        }
+
+        .sidebar__closer {
+            height: 75px;
+        }
+
+        .sidebar__contents {
+            gap: 45px;
+            padding: 40px 0 40px 40px;
+        }
+
+        .sidebar__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar__gnb {
+            font-size: 18px;
+        }
+
+        .sidebar__lnb {
+            font-size: 15px;
+        }
+
+        .sidebar__lnb::after {
+            top: 4px;
+            right: -14px;
+            width: 8px;
+            height: 8px;
+        }
+    }
+}
