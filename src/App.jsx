@@ -8,11 +8,11 @@ function App() {
     const { t } = useTranslation();
 
     return (
-        <BrowserRouter basename="/fecsen">
         <>
             <title>{t(`head.title`)}</title>
             <meta name="description" content={t(`head.description`)} />
 
+            <BrowserRouter basename="/">
                 <Header />
                 <Routes>
                     <Route path="/" element={<Main />} />
