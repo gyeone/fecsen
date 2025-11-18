@@ -24,5 +24,9 @@
             "Security-Operations-Center": "보안 관제",
             "IT-Consulting": "기술 컨설팅"
         }
+    },
+    "head": {
+        "title": "펙센",
+        "description": "정보보안의 중심, 펙센 | 시스템 보안 · 네트워크 보안 · 클라우드 · 보안컨설팅 · AI보안"
     }
 }

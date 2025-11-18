@@ -24,5 +24,10 @@
             "Security-Operations-Center": "Security Operations Center",
             "IT-Consulting": "IT Consulting"
         }
+    },
+
+    "head": {
+        "title": "FECSEN",
+        "description": "Fecsen, the Core of Cybersecurity | System Security · Network Security · Cloud · Security Consulting · AI Security"
     }
 }
