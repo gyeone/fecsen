@@ -5,11 +5,14 @@ import { IoPlaySharp } from "react-icons/io5";
 import bannerImg1 from "../assets/images/bannerImg/bannerImg1.png";
 import bannerImg2 from "../assets/images/bannerImg/bannerImg2.png";
 import bannerImg3 from "../assets/images/bannerImg/bannerImg3.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function Main() {
     const [currentBanner, setCurrentBanner] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
+
+    const touchStartX = useRef(null);
+    const touchEndX = useRef(null);
 
     // 자동 슬라이드
     useEffect(() => {
@@ -32,11 +35,37 @@ function Main() {
         setCurrentBanner((prev) => (prev + 1) % 3);
     };
 
+    // 터치 슬라이드
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.changedTouches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+        touchEndX.current = e.changedTouches[0].clientX;
+    };
+
+    const handleTouchEnd = (e) => {
+        if (touchStartX.current === null || touchEndX.current === null) return;
+
+        const swipeDistance = touchEndX.current - touchStartX.current;
+
+        if (Math.abs(swipeDistance) > 50) {
+            swipeDistance > 0 ? handlePrev() : handleNext();
+        }
+
+        // 초기화
+        touchStartX.current = null;
+        touchEndX.current = null;
+    };
+
     return (
         <main className="main">
             <section className="banner">
                 <div
                     className={`banner__slides banner__slides--${currentBanner}`}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                 >
                     <img
                         src={bannerImg1}
